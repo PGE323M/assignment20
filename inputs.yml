@@ -1,0 +1,56 @@
+boundary conditions:
+  bottom:
+    type: prescribed flux
+    value: 0
+  left:
+    type: prescribed flux
+    value: 0
+  right:
+    type: prescribed flux
+    value: 0
+  top:
+    type: prescribed flux
+    value: 0
+conversion factor: 0.00633
+fluid:
+  oil:
+    compressibility: 1.0e-05
+    formation volume factor: 1.0
+    viscosity: 1.0
+  water:
+    compressibility: 1.0e-05
+    formation volume factor: 1.0
+    viscosity: 1.0
+initial conditions:
+  pressure: 1000
+  water saturation: 0.2
+numerical:
+  number of grids:
+    x: 100
+    y: 1
+  number of time steps: 100
+  solver: implicit
+  time step: 10
+plots:
+  frequency: 1
+reservoir:
+  depth: 1
+  height: 10000
+  length: 1000
+  oil:
+    corey-brooks exponent: 3.0
+    max relative permeability: 1.0
+    residual saturation: 0.2
+  permeability: 100
+  porosity: 0.2
+  water:
+    corey-brooks exponent: 3.0
+    critical saturation: 0.2
+    max relative permeability: 0.2
+wells:
+  rate:
+    locations:
+    - !!python/tuple [0.01, 0.01]
+    - !!python/tuple [999.99, 0.01]
+    radii: [0.25, 0.25]
+    values: [426.5, -426.5]
